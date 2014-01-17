@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<font>
+  <info face="Pricedown" size="102" bold="0" italic="0" charset="" unicode="1" stretchH="100" smooth="1" aa="1" padding="5,5,5,5" spacing="5,5" outline="5"/>
+  <common lineHeight="102" base="78" scaleW="512" scaleH="512" pages="1" packed="0" alphaChnl="1" redChnl="0" greenChnl="0" blueChnl="0"/>
+  <pages>
+    <page id="0" file="Pricedown_0.png" />
+  </pages>
+  <chars count="6">
+    <char id="65" x="145" y="0" width="83" height="93" xoffset="-8" yoffset="13" xadvance="65" page="0" chnl="15" />
+    <char id="66" x="233" y="0" width="61" height="75" xoffset="-8" yoffset="13" xadvance="65" page="0" chnl="15" />
+    <char id="67" x="299" y="0" width="61" height="75" xoffset="-8" yoffset="13" xadvance="65" page="0" chnl="15" />
+    <char id="68" x="365" y="0" width="61" height="75" xoffset="-8" yoffset="13" xadvance="65" page="0" chnl="15" />
+    <char id="69" x="431" y="0" width="51" height="75" xoffset="-8" yoffset="13" xadvance="65" page="0" chnl="15" />
+    <char id="70" x="0" y="0" width="140" height="140" xoffset="-5" yoffset="-5" xadvance="130" page="0" chnl="15" />
+  </chars>
+</font>

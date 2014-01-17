@@ -1,0 +1,24 @@
+[
+	{
+		"id" : "stone",
+		"availableNum" : "4"
+	},
+	{
+		"id" : "pillar",
+		"availableNum" : "8"
+	},
+	{
+		"id" : "roof",
+		"availableNum" : "4"
+	},
+	{
+		"id" : "king",
+		"availableNum" : "1"
+	},
+	{
+		"id" : "button",
+		"availableNum" : "2"
+	}
+ 
+]
+

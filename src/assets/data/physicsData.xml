@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<siegePhysic>
+	<impulseRadius>100</impulseRadius>
+	<velocityFactor>3</velocityFactor>
+	<heroDamage>15</heroDamage>
+	<otherDamage>2</otherDamage>
+	<floorDamage>1</floorDamage>
+	<stoneDamage>2</stoneDamage>
+	<pillarDamage>1</pillarDamage>
+	<roofDamage>100</roofDamage>
+	
+	<forecastNum>20</forecastNum>
+	<herogrivateVelocity>2</herogrivateVelocity>
+	<heroWidth>60</heroWidth>
+	<heroHeight>60</heroHeight>		
+	<heroVertices>
+		<Vertice x="-6" y="-15" />
+		<Vertice x="6" y="-15" />
+		<Vertice x="15" y="0" />
+		<Vertice x="6" y="15" />
+		<Vertice x="-6" y="15" />
+		<Vertice x="-15" y="0" />
+	</heroVertices>
+</siegePhysic>

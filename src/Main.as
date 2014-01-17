@@ -17,7 +17,7 @@ package
 	import starling.utils.RectangleUtil;
 	import starling.utils.ScaleMode;
 	import starling.utils.formatString;
-	
+
 	/**
 	 *@author: wanghe
 	 *@data: Nov 27, 2013
@@ -26,14 +26,19 @@ package
 	public class Main extends Sprite
 	{
 		// Startup image for SD screens
-		[Embed(source="textures/background.png")]
-		private static var Background:Class;		
+		[Embed(source="assets/textures/background.png")]
+		private static var Background:Class;
+		
+		[Embed(source="assets/assets01.xml", mimeType="application/octet-stream")]
+		public static const AtlasXml_assets01:Class;
+		[Embed(source="assets/assets01.tps", mimeType="application/octet-stream")]
+		public static const AtlasTexture_assets01:Class;
 	
 		private var _Starling:Starling;
 		public function Main()
 		{
 			super();
-			
+
 			// support autoOrients
 			stage.align = StageAlign.TOP_LEFT;
 			stage.scaleMode = StageScaleMode.NO_SCALE;
@@ -50,15 +55,17 @@ package
 			// create the AssetManager, which handles all required assets for this resolution
 			
 			var scaleFactor:int = viewPort.width < 480 ? 1 : 2; // midway between 320 and 640
+			scaleFactor = 1
 			var appDir:File = File.applicationDirectory;
 			var assets:AssetManager = new AssetManager(scaleFactor);
 			
 			assets.verbose = Capabilities.isDebugger;
 	
 			assets.enqueue(
-				appDir.resolvePath("audio"),
-				appDir.resolvePath(formatString("fonts/{0}x", scaleFactor)),
-				appDir.resolvePath(formatString("textures/{0}x", scaleFactor))
+				appDir.resolvePath("assets/audio"),
+				appDir.resolvePath(formatString("assets/fonts/{0}x", scaleFactor)),
+				appDir.resolvePath(formatString("assets/textures/{0}x", scaleFactor)),
+				appDir.resolvePath("assets/textures/others")
 			);
 			
 			// While Stage3D is initializing, the screen will be blank. To avoid any flickering, 
@@ -109,6 +116,8 @@ package
 			
 			NativeApplication.nativeApplication.addEventListener(
 				flash.events.Event.DEACTIVATE, function (e:*):void { _Starling.stop(); });
-		}
+			
+			
+		}		
 	}
 }

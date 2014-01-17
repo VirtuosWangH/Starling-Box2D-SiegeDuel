@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:bb563fa22377c6578e0b1dbee508adcd$ -->
+<TextureAtlas imagePath="assets01.png">
+    <SubTexture name="PopUpWindow" x="2" y="772" width="479" height="238"/>
+    <SubTexture name="background" x="2" y="2" width="1275" height="768"/>
+    <SubTexture name="btnBack" x="1220" y="772" width="88" height="90"/>
+    <SubTexture name="bubble" x="1028" y="1001" width="17" height="15"/>
+    <SubTexture name="button" x="816" y="893" width="445" height="106"/>
+    <SubTexture name="buttonOption" x="483" y="914" width="88" height="90"/>
+    <SubTexture name="cell" x="670" y="772" width="101" height="120"/>
+    <SubTexture name="complete" x="1279" y="604" width="65" height="65"/>
+    <SubTexture name="friendListItem" x="543" y="772" width="125" height="127"/>
+    <SubTexture name="gridCell" x="573" y="901" width="108" height="108"/>
+    <SubTexture name="hero" x="1263" y="949" width="67" height="71"/>
+    <SubTexture name="king" x="683" y="894" width="131" height="116"/>
+    <SubTexture name="navigatorArrow" x="1015" y="772" width="119" height="119"/>
+    <SubTexture name="pause" x="894" y="772" width="119" height="119"/>
+    <SubTexture name="pillar" x="1136" y="772" width="82" height="103" frameX="-2" frameY="0" frameWidth="84" frameHeight="103"/>
+    <SubTexture name="reel" x="1279" y="2" width="1" height="600"/>
+    <SubTexture name="removeAll" x="1332" y="949" width="65" height="65"/>
+    <SubTexture name="roof" x="1279" y="671" width="186" height="59"/>
+    <SubTexture name="row" x="2" y="1012" width="1024" height="1"/>
+    <SubTexture name="shop" x="773" y="772" width="119" height="119"/>
+    <SubTexture name="slingshot" x="483" y="772" width="58" height="140" frameX="0" frameY="0" frameWidth="60" frameHeight="140"/>
+    <SubTexture name="stone" x="1263" y="864" width="77" height="83" frameX="0" frameY="-8" frameWidth="83" frameHeight="103"/>
+</TextureAtlas>

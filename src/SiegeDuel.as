@@ -1,9 +1,10 @@
 package
 {
+	import flash.events.TouchEvent;
 	import flash.ui.Keyboard;
 	import flash.utils.getDefinitionByName;
 	
-	import scenes.Scene;
+	import view.scenes.Scene;
 	
 	import starling.core.Starling;
 	import starling.display.Button;
@@ -11,6 +12,7 @@ package
 	import starling.display.Sprite;
 	import starling.events.Event;
 	import starling.events.KeyboardEvent;
+	import starling.events.TouchEvent;
 	import starling.textures.Texture;
 	import starling.utils.AssetManager;
 	
@@ -43,7 +45,7 @@ package
 			var bg:Image = new Image(background);
 			bg.width = SDContext.stageWidth;
 			bg.height = SDContext.stageHeight;
-			addChild(bg);
+//			addChild(bg);
 			
 			// The AssetManager contains all the raw asset data, but has not created the textures
 			// yet. This takes some time (the assets might be loaded from disk or even via the
@@ -68,7 +70,7 @@ package
 							function():void	{
 								mLoadingProgress.removeFromParent(true);
 								mLoadingProgress = null;
-								showMainMenu();
+								showMainMenu();								
 							}, 
 							0.15
 						);
@@ -88,6 +90,8 @@ package
 			addChild(mMainMenu);
 			mMainMenu.x = (SDContext.stageWidth - mMainMenu.width)/2
 			mMainMenu.y = (SDContext.stageHeight - mMainMenu.height)/2
+				
+//			showScene("view.scenes::BuildScene");
 		}
 		
 		private function onKey(event:KeyboardEvent):void

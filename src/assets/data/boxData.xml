@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Boxdata>
+	<box type="ground" density="80" friction="100" restitution="0" hp="0" damageOthers="1"/>
+	<box type="hero" density="20" friction="50" restitution="0.1" hp="100" damageOthers="1"/>
+	<box type="stone" density="75" friction="90" restitution="0" hp="25" damageOthers="2"/>
+	<box type="roof" density="60" friction="90" restitution="0" hp="20" damageOthers="4"/>
+	<box type="pillar" density="20" friction="20" restitution="0" hp="15" damageOthers="1"/>
+	<box type="king" density="50" friction="50" restitution="0.1" hp="30" damageOthers="1"/>
+</Boxdata>
+

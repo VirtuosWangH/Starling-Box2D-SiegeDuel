@@ -2,26 +2,26 @@ package
 {
     import flash.utils.getQualifiedClassName;
     
-    import scenes.AnimationScene;
-    import scenes.BenchmarkScene;
-    import scenes.BlendModeScene;
-    import scenes.CustomHitTestScene;
-    import scenes.FilterScene;
-    import scenes.MovieScene;
-    import scenes.RenderTextureScene;
-    import scenes.TextScene;
-    import scenes.TextureScene;
-    import scenes.TouchScene;
+    import model.DataManager;
     
     import starling.core.Starling;
     import starling.display.Button;
-    import starling.display.Image;
     import starling.display.Sprite;
     import starling.events.TouchEvent;
     import starling.events.TouchPhase;
-    import starling.text.TextField;
     import starling.textures.Texture;
-    import starling.utils.VAlign;
+    
+    import view.scenes.AnimationScene;
+    import view.scenes.BenchmarkScene;
+    import view.scenes.BlendModeScene;
+    import view.scenes.BuildScene;
+    import view.scenes.CustomHitTestScene;
+    import view.scenes.FilterScene;
+    import view.scenes.MovieScene;
+    import view.scenes.RenderTextureScene;
+    import view.scenes.TextScene;
+    import view.scenes.TextureScene;
+    import view.scenes.TouchScene;
 
     public class MainMenu extends Sprite
     {
@@ -29,18 +29,19 @@ package
         {
             init();
         }
-        
+
         private function init():void
         {            
             var scenesToCreate:Array = [
-                ["Textures", TextureScene],
-                ["Multitouch", TouchScene],
-                ["TextFields", TextScene],
-                ["Animations", AnimationScene],
-                ["Custom hit-test", CustomHitTestScene],
-                ["Movie Clip", MovieScene],
-                ["Filters", FilterScene],
-                ["Blend Modes", BlendModeScene],
+				["BuildScene", BuildScene],
+//                ["Textures", TextureScene],
+//                ["Multitouch", TouchScene],
+//                ["TextFields", TextScene],
+//                ["Animations", AnimationScene],
+//                ["Custom hit-test", CustomHitTestScene],
+//                ["Movie Clip", MovieScene],
+//                ["Filters", FilterScene],
+//                ["Blend Modes", BlendModeScene],
                 ["Render Texture", RenderTextureScene],
                 ["Benchmark", BenchmarkScene]
             ];
@@ -59,9 +60,10 @@ package
 				
                 addChild(button);
                 ++count;
-            }          
-        }
-        
+            }
+
+			var dataManager:DataManager = DataManager.getInstance();
+		}
         private function onInfoTextTouched(event:TouchEvent):void
         {
             if (event.getTouch(this, TouchPhase.ENDED))
