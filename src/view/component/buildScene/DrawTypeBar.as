@@ -135,11 +135,11 @@ package view.component.buildScene
 					break;
 				}
 				case _drawMode[2]:{
-					Restrictions._isConstrainSquare = check.isSelected;
+					Restrictions._isGridSnapping = check.isSelected;
 					break;
 				}
 				case _drawMode[3]:{
-					Restrictions._isGridSnapping = check.isSelected;
+					Restrictions._isConstrainSquare = check.isSelected;
 					break;
 				}
 				default:

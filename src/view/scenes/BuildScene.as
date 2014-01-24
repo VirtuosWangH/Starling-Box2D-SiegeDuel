@@ -1,10 +1,11 @@
 package view.scenes
 {
-	import flash.display.Sprite;
+	import flash.filters.GlowFilter;
 	import flash.geom.Point;
 	
 	import editor.ModeChanger;
 	import editor.commonData.DrawingType;
+	import editor.drawingObject.BaseObject;
 	import editor.ui.NativeSprite;
 	
 	import feathers.dragDrop.DragData;
@@ -66,7 +67,7 @@ package view.scenes
 			_blockSelectBar.y = SDContext.stageHeight - _blockSelectBar.height;
 			this.addChild(_blockSelectBar);
 			
-			_modeChanger = new ModeChanger();
+			_modeChanger = ModeChanger.getInstance();
 			_drawTypeBar = new DrawTypeBar(_modeChanger);
 			_drawTypeBar.x = (SDContext.stageWidth - _drawTypeBar.width)/2 -400;
 			_drawTypeBar.y = SDContext.stageHeight - _drawTypeBar.height -50;
@@ -182,8 +183,8 @@ package view.scenes
 		private function onDrawTouched(te:TouchEvent):void{
 			var basetouch:Touch = te.getTouch(constructionArea);
 			if(basetouch){
-				if(basetouch.phase == TouchPhase.BEGAN){
-					var mousePoint:Point = new Point(basetouch.globalX, basetouch.globalY);
+				if(basetouch.phase == TouchPhase.BEGAN){					
+					var mousePoint:Point = new Point(basetouch.globalX, basetouch.globalY);					
 					startDraw(mousePoint);
 				}
 				if(basetouch.phase == TouchPhase.ENDED){
@@ -193,6 +194,7 @@ package view.scenes
 			}			
 		}
 		private function startDraw(mousePoint:Point):void{
+			
 			if (_modeChanger.mode.toString() == DrawingType.DRAG){
 				if (_nativeDrawSprite.drawingObject){
 					if (_nativeDrawSprite.drawingObject.hitTestPoint(mousePoint.x, mousePoint.y, true)){						
@@ -200,10 +202,10 @@ package view.scenes
 					}
 				}
 			}else if (_modeChanger.mode.toString() == DrawingType.ROTATE){
-//				if (_drawingObject){
-//					_modeChanger.mode.start(_nativeDrawSprite);
-//					this.addEventListener(Event.ENTER_FRAME, onDrawing);
-//				} 
+				if (_nativeDrawSprite.drawingObject){
+					_modeChanger.mode.start(_nativeDrawSprite);
+					this.addEventListener(Event.ENTER_FRAME, onDrawing);
+				} 
 			}else{
 				_modeChanger.mode.start(_nativeDrawSprite);
 				this.addEventListener(Event.ENTER_FRAME, onDrawing);
