@@ -1,0 +1,2 @@
+﻿package editor.modes{	import editor.ui.NativeSprite;
+		public class BaseMode implements IDrawMode {		 		protected var _main:NativeSprite;		public function BaseMode(){		}				public function start(nativeSprite:NativeSprite):void{			trace("base start");		}				public function run():void{			trace("base run");		}				public function end():void{			trace("base end");		}		public function reset():void{			trace("base reset");		}		public function toString():String{			return "Default";		}		 	}}

@@ -1,0 +1,2 @@
+﻿package editor.modes{	import editor.ui.NativeSprite;
+		public interface IDrawMode{				function reset():void;		function start(nativeSprite:NativeSprite):void;		function run():void;		function end():void;		function toString():String;	}}

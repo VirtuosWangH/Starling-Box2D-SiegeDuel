@@ -16,7 +16,6 @@ package view.component
 			super();
 			createChildren();
 		}
-		
 		public function createChildren():void
 		{
 		}

@@ -17,6 +17,8 @@ package
 	import starling.utils.RectangleUtil;
 	import starling.utils.ScaleMode;
 	import starling.utils.formatString;
+	
+	import utils.NativeUtil;
 
 	/**
 	 *@author: wanghe
@@ -118,6 +120,9 @@ package
 				flash.events.Event.DEACTIVATE, function (e:*):void { _Starling.stop(); });
 			
 			
-		}		
+			NativeUtil.initNativeAssets();
+			
+		}	
+		
 	}
 }

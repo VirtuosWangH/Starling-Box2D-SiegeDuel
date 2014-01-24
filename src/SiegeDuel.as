@@ -1,10 +1,9 @@
 package
 {
-	import flash.events.TouchEvent;
 	import flash.ui.Keyboard;
 	import flash.utils.getDefinitionByName;
 	
-	import view.scenes.Scene;
+	import feathers.themes.MetalWorksMobileTheme;
 	
 	import starling.core.Starling;
 	import starling.display.Button;
@@ -12,11 +11,12 @@ package
 	import starling.display.Sprite;
 	import starling.events.Event;
 	import starling.events.KeyboardEvent;
-	import starling.events.TouchEvent;
 	import starling.textures.Texture;
 	import starling.utils.AssetManager;
 	
 	import utils.ProgressBar;
+	
+	import view.scenes.Scene;
 	
 	/**
 	 *@author: wanghe
@@ -32,6 +32,11 @@ package
 		public function SiegeDuel()
 		{
 			super();
+			this.addEventListener(Event.ADDED_TO_STAGE, addedToStageHandler);
+		}
+		private function addedToStageHandler(event:starling.events.Event):void
+		{
+			var _theme:MetalWorksMobileTheme = new MetalWorksMobileTheme(this.stage);
 		}
 		
 		public function start(background:Texture, assets:AssetManager):void

@@ -46,7 +46,7 @@ package model
 		private function onComplete(evt:Event):void {
 			_data = String(file.data);
 			
-			var _tempObj:Object=com.maccherone.json.JSON.decode(_data);
+			var _tempObj:Object = com.maccherone.json.JSON.decode(_data);
 			parseData(_tempObj);
 
 		}
@@ -58,6 +58,11 @@ package model
 				blockVO.availableNum = blocksItem.availableNum;
 				blockAry.push(blockVO);				
 			}	
+		}
+		
+		public function encodeAry2JSON(ary:Array):void{
+			var jsonStr:String = com.maccherone.json.JSON.encode(ary);
+			trace("--------"+jsonStr)
 		}
 	}
 }

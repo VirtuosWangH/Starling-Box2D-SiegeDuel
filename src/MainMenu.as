@@ -2,6 +2,8 @@ package
 {
     import flash.utils.getQualifiedClassName;
     
+    import feathers.themes.MetalWorksMobileTheme;
+    
     import model.DataManager;
     
     import starling.core.Starling;
@@ -11,23 +13,15 @@ package
     import starling.events.TouchPhase;
     import starling.textures.Texture;
     
-    import view.scenes.AnimationScene;
     import view.scenes.BenchmarkScene;
-    import view.scenes.BlendModeScene;
     import view.scenes.BuildScene;
-    import view.scenes.CustomHitTestScene;
-    import view.scenes.FilterScene;
-    import view.scenes.MovieScene;
     import view.scenes.RenderTextureScene;
-    import view.scenes.TextScene;
-    import view.scenes.TextureScene;
-    import view.scenes.TouchScene;
 
     public class MainMenu extends Sprite
     {
         public function MainMenu()
         {
-            init();
+            init();			
         }
 
         private function init():void

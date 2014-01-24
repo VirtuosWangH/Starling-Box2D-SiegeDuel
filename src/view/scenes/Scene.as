@@ -16,7 +16,13 @@ package view.scenes
             mBackButton.x = 0;
             mBackButton.y = SDContext.stageHeight - mBackButton.height + 1;
             mBackButton.name = "backButton";
-            addChild(mBackButton);
+            addChild(mBackButton);			
+			
+			createChildren();
         }
+		
+		protected function createChildren():void{
+			//this will be override by children
+		}
     }
 }
