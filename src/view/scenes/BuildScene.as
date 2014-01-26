@@ -2,11 +2,13 @@ package view.scenes
 {
 	import flash.filters.GlowFilter;
 	import flash.geom.Point;
+	import flash.utils.getQualifiedClassName;
 	
 	import editor.ModeChanger;
 	import editor.commonData.DrawingType;
 	import editor.drawingObject.BaseObject;
-	import editor.ui.NativeSprite;
+	import editor.drawingObject.JointObject;
+	import editor.ui.NativeDrawSprite;
 	
 	import feathers.dragDrop.DragData;
 	import feathers.dragDrop.DragDropManager;
@@ -43,7 +45,7 @@ package view.scenes
 		private var _modeSwitchBtn:Button;
 		private var _constructionCompleteBtn:Button;
 		
-		private var _nativeDrawSprite:NativeSprite;
+		private var _nativeDrawSprite:NativeDrawSprite;
 		public function BuildScene()
 		{
 			super();
@@ -126,12 +128,15 @@ package view.scenes
 			_constructionCompleteBtn.x = SDContext.stageWidth - _modeSwitchBtn.width;
 			_constructionCompleteBtn.y = SDContext.stageHeight - _modeSwitchBtn.height;
 			_constructionCompleteBtn.addEventListener(Event.TRIGGERED, onControlBtnTriggered);
+			_constructionCompleteBtn.name = getQualifiedClassName(SiegeScene);
 			addChild(_constructionCompleteBtn);
 		}
 		
 		private function onControlBtnTriggered(event:Event):void{			
 			var blockAry:Array = prepareBlockAry();
-			DataManager.getInstance().encodeAry2JSON(blockAry);				
+			DataManager.getInstance().encodeAry2JSON(blockAry);		
+			
+			getCommandFromObjects();
 		}
 		private function prepareBlockAry():Array{
 			var blockAry:Array = [];
@@ -151,6 +156,28 @@ package view.scenes
 				}
 			}
 			return blockAry;
+		}
+		private function getCommandFromObjects():String{
+			var str:String = "";
+			for (var i:int = 0; i<_nativeDrawSprite.numChildren; i++){
+				var e:BaseObject = _nativeDrawSprite.getChildAt(i) as BaseObject;
+				if (e){
+					if (!(e is JointObject)){//for no joint
+						str += e.objectDef + "\n";
+					}
+				}
+			}
+			str += "// joints:\n";
+			for (i = 0; i<_nativeDrawSprite.numChildren; i++){
+				e = _nativeDrawSprite.getChildAt(i) as BaseObject;
+				if (e){
+					if ((e is JointObject)){//for joint
+						str += e.objectDef + "\n";
+					}
+				}
+			}			
+			trace(str);
+			return str;
 		}
 		//=========Mode Change=================================
 		private function createModeSwitchor():void{
@@ -217,7 +244,7 @@ package view.scenes
 		
 		//=========Native Sprite=================================
 		private function createNativeSprite():void{
-			_nativeDrawSprite = new NativeSprite();
+			_nativeDrawSprite = new NativeDrawSprite();
 			NativeUtil.nativeSpriteContainer.addChild(_nativeDrawSprite);
 		}
 		public override function dispose():void{

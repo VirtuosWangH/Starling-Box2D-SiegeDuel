@@ -2,8 +2,6 @@ package
 {
     import flash.utils.getQualifiedClassName;
     
-    import feathers.themes.MetalWorksMobileTheme;
-    
     import model.DataManager;
     
     import starling.core.Starling;
@@ -16,6 +14,7 @@ package
     import view.scenes.BenchmarkScene;
     import view.scenes.BuildScene;
     import view.scenes.RenderTextureScene;
+    import view.scenes.SiegeScene;
 
     public class MainMenu extends Sprite
     {
@@ -28,6 +27,7 @@ package
         {            
             var scenesToCreate:Array = [
 				["BuildScene", BuildScene],
+				["SiegeScene", SiegeScene],
 //                ["Textures", TextureScene],
 //                ["Multitouch", TouchScene],
 //                ["TextFields", TextScene],

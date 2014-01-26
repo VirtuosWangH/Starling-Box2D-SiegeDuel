@@ -125,13 +125,18 @@ package
 		}
 		
 		private function showScene(name:String):void
-		{
-			if (mCurrentScene) return;
-			
-			var sceneClass:Class = getDefinitionByName(name) as Class;
-			mCurrentScene = new sceneClass() as Scene;
-			mMainMenu.removeFromParent();
-			addChild(mCurrentScene);
+		{			
+			if(name){
+				if (mCurrentScene){
+					mCurrentScene.removeFromParent(true);
+					mCurrentScene = null;	
+				} 
+				
+				var sceneClass:Class = getDefinitionByName(name) as Class;
+				mCurrentScene = new sceneClass() as Scene;
+				mMainMenu.removeFromParent();
+				addChild(mCurrentScene);
+			}			
 		}
 		
 		public static function get assets():AssetManager { return sAssets; }

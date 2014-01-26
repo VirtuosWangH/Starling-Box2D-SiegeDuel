@@ -16,12 +16,12 @@ package editor.ui
 	 *@data: Jan 24, 2014
 	 */
 	
-	public class NativeSprite extends Sprite
+	public class NativeDrawSprite extends Sprite
 	{
 		private var _drawingObject:BaseObject;
 		public function get drawingObject():BaseObject{ return _drawingObject;}	
 		
-		public function NativeSprite()
+		public function NativeDrawSprite()
 		{
 			super();
 			this.addEventListener(Event.ADDED_TO_STAGE,initListener);

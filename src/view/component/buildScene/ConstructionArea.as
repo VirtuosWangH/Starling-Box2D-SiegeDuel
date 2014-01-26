@@ -42,7 +42,7 @@ package view.component.buildScene
 			
 				for (var i:int = 0; i<areaHeight; i+=10){					
 					if (i % 30 != 0){
-						rowLineImage.alpha = 0.6;
+						rowLineImage.alpha = 0.1;
 					}else{
 						rowLineImage.alpha = 1;
 					}					
@@ -51,7 +51,7 @@ package view.component.buildScene
 				}
 				for (var j:int = 0; j<areaWidth; j+=10){
 					if (j % 30 != 0){
-						reelLineImage.alpha = 0.6;
+						reelLineImage.alpha = 0.1;
 					}else{
 						reelLineImage.alpha = 1;
 					}
