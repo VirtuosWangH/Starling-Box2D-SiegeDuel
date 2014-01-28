@@ -20,12 +20,13 @@ package model
 		private var file:FileReference;
 		private var _data:String;
 		
-		public var blockAry:Array; 
+		public var cellAry:Array; 
+		public var _blockAry:Array;
 		public function DataManager(singleton:SingletonClass)
 		{
 			super();
 			
-			blockAry = [];
+			cellAry = [];
 			
 			file = new FileReference();
 			file.browse();
@@ -56,13 +57,15 @@ package model
 				var blockVO:BlockVO = new BlockVO();
 				blockVO.id = blocksItem.id;
 				blockVO.availableNum = blocksItem.availableNum;
-				blockAry.push(blockVO);				
+				cellAry.push(blockVO);				
 			}	
 		}
 		
-		public function encodeAry2JSON(ary:Array):void{
+		public function encodeAry2JSON(ary:Array):String{
 			var jsonStr:String = com.maccherone.json.JSON.encode(ary);
+			
 			trace("--------"+jsonStr)
+			return jsonStr;
 		}
 	}
 }

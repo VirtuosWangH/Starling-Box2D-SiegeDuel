@@ -31,7 +31,7 @@ package view.component.buildScene
 		override public function createChildren():void
 		{
 			var dataManager:DataManager = DataManager.getInstance();
-			var blockAry:Array = dataManager.blockAry;
+			var blockAry:Array = dataManager.cellAry;
 			for(var i:int; i < blockAry.length; i++)
 			{
 				var blockVO:BlockVO = blockAry[i];

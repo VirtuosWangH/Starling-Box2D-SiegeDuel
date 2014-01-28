@@ -1,11 +1,15 @@
 package view.scenes
 {
+	import com.maccherone.json.JSON;
+	
 	import flash.display.Sprite;
 	
 	import EasyBox2D.EasyBox2D;
 	import EasyBox2D.ui.NativeB2DSprite;
 	
 	import editor.parsers.StringToObject;
+	
+	import model.DataManager;
 	
 	import utils.NativeUtil;
 
@@ -26,10 +30,19 @@ package view.scenes
 			var easyB2D:EasyBox2D = new EasyBox2D(nativeSprite,params);
 			easyB2D.createStageWalls();
 			
-			var objString:String = "{x:2, y:2, width:2, height:2, angle: 0, density:1, restitution:0.4, friction:0.5}";
-			var property:Object = StringToObject.parse(objString);
+			var dataManager:DataManager = DataManager.getInstance();
 			
-			easyB2D.addBox(property);
+//			var objString:String = "{x:2, y:2, width:2, height:2, angle: 0, density:1, restitution:0.4, friction:0.5}";
+			
+			for (var i:int = 0; i < dataManager._blockAry.length; i++) 
+			{
+//				var objString:String = com.maccherone.json.JSON.encode(dataManager._blockAry[i])
+//				var property:Object = StringToObject.parse(objString);
+				var property:Object = dataManager._blockAry[i];
+				easyB2D.addBox(property);
+			}
+			
+			
 			easyB2D.start();
 		}
 	}

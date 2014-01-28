@@ -94,7 +94,7 @@ package view.scenes
 			constructionArea.localToGlobal(localPoint,resultPoint);
 			
 			var dataManager:DataManager = DataManager.getInstance();
-			var blockAry:Array = dataManager.blockAry;
+			var blockAry:Array = dataManager.cellAry;
 			var blockVO:BlockVO = blockAry[4];
 			var blockCell:BlocksCell = new BlocksCell(blockVO);
 			blockCell._numTxt.visible = false;
@@ -134,6 +134,7 @@ package view.scenes
 		
 		private function onControlBtnTriggered(event:Event):void{			
 			var blockAry:Array = prepareBlockAry();
+			DataManager.getInstance()._blockAry = blockAry;
 			DataManager.getInstance().encodeAry2JSON(blockAry);		
 			
 			getCommandFromObjects();
@@ -148,10 +149,18 @@ package view.scenes
 					var block:BlocksCell = child as BlocksCell;
 					var blockObj:Object = new Object();
 					blockObj.id = block._blockVO.id;
-					blockObj.x = block.x;
-					blockObj.y = block.y;
-					blockObj.width = block.width;
-					blockObj.height = block.height;
+					blockObj.x = block.x/30;
+					blockObj.y = block.y/30;
+					blockObj.width = block.width/30;
+					blockObj.height = block.height/30;
+//					blockObj.x = 2;
+//					blockObj.y = 2;
+//					blockObj.width = 2;
+//					blockObj.height = 2;
+					blockObj.density = 1;
+					blockObj.restitution = 0.4;
+					blockObj.friction = 0.5;
+					blockObj.angle = 0;
 					blockAry.push(blockObj);
 				}
 			}
