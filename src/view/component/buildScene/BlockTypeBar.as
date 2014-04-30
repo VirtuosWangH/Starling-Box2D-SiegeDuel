@@ -49,7 +49,7 @@ package view.component.buildScene
 					var dragData:DragData = new DragData();
 					dragData.setDataForFormat("display-object-drag-format", blockCell);					
 					var touch:Touch = te.getTouch(stage);
-					var bgTexture:Texture = SiegeDuel.assets.getTexture("button_normal");
+					var bgTexture:Texture = SiegeDuel.assetsManager.getTexture("button_normal");
 					var dragAvator:Image = UICreator.createImg(this,bgTexture,true);
 					DragDropManager.startDrag(blockCell,touch,dragData,dragAvator);
 				}

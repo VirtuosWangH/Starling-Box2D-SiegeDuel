@@ -33,7 +33,7 @@ package view.scenes
                                           // thus, it is more efficient to disable them.
             addChildAt(mContainer, 0);
             
-            mStartButton = new Button(SiegeDuel.assets.getTexture("button_normal"), "Start benchmark");
+            mStartButton = new Button(SiegeDuel.assetsManager.getTexture("button_normal"), "Start benchmark");
             mStartButton.addEventListener(Event.TRIGGERED, onStartButtonTriggered);
             mStartButton.x = SDContext.CenterX - int(mStartButton.width / 2);
             mStartButton.y = 20;
@@ -117,7 +117,7 @@ package view.scenes
             
             for (var i:int = 0; i<numObjects; ++i)
             {
-                var egg:Image = new Image(SiegeDuel.assets.getTexture("benchmark_object"));
+                var egg:Image = new Image(SiegeDuel.assetsManager.getTexture("benchmark_object"));
                 egg.x = padding + Math.random() * (SDContext.stageHeight - 2 * padding);
                 egg.y = padding + Math.random() * (SDContext.stageWidth - 2 * padding);
                 mContainer.addChild(egg);

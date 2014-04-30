@@ -26,8 +26,8 @@ package view.component.buildScene
 			var areaWidth:int = SDContext.stageWidth -151;
 			var areaHeight:int = SDContext.stageHeight -148;
 			
-			var rowLineTexture:Texture = SiegeDuel.assets.getTexture("row");
-			var reelLineTexture:Texture = SiegeDuel.assets.getTexture("reel");
+			var rowLineTexture:Texture = SiegeDuel.assetsManager.getTexture("row");
+			var reelLineTexture:Texture = SiegeDuel.assetsManager.getTexture("reel");
 			var rowLineImage:Image = new Image(rowLineTexture);
 			var reelLineImage:Image = new Image(reelLineTexture);
 			rowLineImage.width = areaWidth;

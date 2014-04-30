@@ -11,17 +11,17 @@ package view.scenes
             // the flight textures are actually loaded from an atlas texture.
             // the "AssetManager" class wraps it away for us.
             
-            var image1:Image = new Image(SiegeDuel.assets.getTexture("flight_00"));
+            var image1:Image = new Image(SiegeDuel.assetsManager.getTexture("flight_00"));
             image1.x = -20;
             image1.y = 0;
             addChild(image1);
             
-            var image2:Image = new Image(SiegeDuel.assets.getTexture("flight_04"));
+            var image2:Image = new Image(SiegeDuel.assetsManager.getTexture("flight_04"));
             image2.x = 90;
             image2.y = 85;
             addChild(image2);
             
-            var image3:Image = new Image(SiegeDuel.assets.getTexture("flight_08"));
+            var image3:Image = new Image(SiegeDuel.assetsManager.getTexture("flight_08"));
             image3.x = 100;
             image3.y = -60;
             addChild(image3);
@@ -29,7 +29,7 @@ package view.scenes
             try
             {
                 // display a compressed texture
-                var compressedTexture:Texture = SiegeDuel.assets.getTexture("compressed_texture");
+                var compressedTexture:Texture = SiegeDuel.assetsManager.getTexture("compressed_texture");
                 var image:Image = new Image(compressedTexture);
                 image.x = SDContext.CenterX - image.width / 2;
                 image.y = 280;

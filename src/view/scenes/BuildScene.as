@@ -124,7 +124,7 @@ package view.scenes
 		
 		//=========Control Bar=================================
 		private function controlBtnBar():void{
-			_constructionCompleteBtn = new Button(SiegeDuel.assets.getTexture("button_normal"), "Complete");
+			_constructionCompleteBtn = new Button(SiegeDuel.assetsManager.getTexture("button_normal"), "Complete");
 			_constructionCompleteBtn.x = SDContext.stageWidth - _modeSwitchBtn.width;
 			_constructionCompleteBtn.y = SDContext.stageHeight - _modeSwitchBtn.height;
 			_constructionCompleteBtn.addEventListener(Event.TRIGGERED, onControlBtnTriggered);
@@ -190,7 +190,7 @@ package view.scenes
 		}
 		//=========Mode Change=================================
 		private function createModeSwitchor():void{
-			_modeSwitchBtn = new Button(SiegeDuel.assets.getTexture("button_normal"), "Mode: Select");
+			_modeSwitchBtn = new Button(SiegeDuel.assetsManager.getTexture("button_normal"), "Mode: Select");
 			_modeSwitchBtn.x = int(SDContext.CenterX - _modeSwitchBtn.width / 2);
 			_modeSwitchBtn.y = 15;
 			_modeSwitchBtn.addEventListener(Event.TRIGGERED, onModeBtnTriggered);

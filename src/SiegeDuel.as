@@ -139,6 +139,6 @@ package
 			}			
 		}
 		
-		public static function get assets():AssetManager { return sAssets; }
+		public static function get assetsManager():AssetManager { return sAssets; }
 	}
 }

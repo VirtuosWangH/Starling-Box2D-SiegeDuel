@@ -30,7 +30,7 @@ package view.scenes
             mCanvas.addEventListener(TouchEvent.TOUCH, onTouch);
             addChild(mCanvas);
             
-            mBrush = new Image(SiegeDuel.assets.getTexture("brush"));
+            mBrush = new Image(SiegeDuel.assetsManager.getTexture("brush"));
             mBrush.pivotX = mBrush.width / 2;
             mBrush.pivotY = mBrush.height / 2;
             mBrush.blendMode = BlendMode.NORMAL;
@@ -41,7 +41,7 @@ package view.scenes
             infoText.y = SDContext.CenterY - infoText.height / 2;
             mRenderTexture.draw(infoText);
             
-            mButton = new Button(SiegeDuel.assets.getTexture("button_normal"), "Mode: Draw");
+            mButton = new Button(SiegeDuel.assetsManager.getTexture("button_normal"), "Mode: Draw");
             mButton.x = int(SDContext.CenterX - mButton.width / 2);
             mButton.y = 15;
             mButton.addEventListener(Event.TRIGGERED, onButtonTriggered);

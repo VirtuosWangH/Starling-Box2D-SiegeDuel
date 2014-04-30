@@ -25,7 +25,7 @@ package view.element
 		private function createChildren():void
 		{
 //			var bgTexture:Texture = SiegeDuel.assets.getTexture(_blockVO.id);
-			var bgTexture:Texture = SiegeDuel.assets.getTexture("button_normal");
+			var bgTexture:Texture = SiegeDuel.assetsManager.getTexture("button_normal");
 			var bg:Image = UICreator.createImg(this,bgTexture,true);
 			
 			_numTxt = new TextField(50,30,"0");

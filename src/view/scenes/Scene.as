@@ -12,7 +12,7 @@ package view.scenes
             // the main menu listens for TRIGGERED events, so we just need to add the button.
             // (the event will bubble up when it's dispatched.)
             
-            mBackButton = new Button(SiegeDuel.assets.getTexture("button_back"), "Back");
+            mBackButton = new Button(SiegeDuel.assetsManager.getTexture("button_back"), "Back");
             mBackButton.x = 0;
             mBackButton.y = SDContext.stageHeight - mBackButton.height + 1;
             mBackButton.name = "backButton";

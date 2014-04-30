@@ -40,7 +40,7 @@ package
                 ["Benchmark", BenchmarkScene]
             ];
             
-            var buttonTexture:Texture = SiegeDuel.assets.getTexture("button_big");
+            var buttonTexture:Texture = SiegeDuel.assetsManager.getTexture("button_big");
             var count:int = 0;
             
             for each (var sceneToCreate:Array in scenesToCreate)
